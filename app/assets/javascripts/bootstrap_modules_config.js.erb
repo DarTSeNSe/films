@@ -1,0 +1,24 @@
+<%
+modules_list = <<-MODULES_LIST
+bootstrap-transition
+bootstrap-alert
+bootstrap-modal
+bootstrap-dropdown
+# bootstrap-scrollspy
+bootstrap-tab
+bootstrap-tooltip
+bootstrap-popover
+bootstrap-button
+bootstrap-collapse
+# bootstrap-carousel
+bootstrap-typeahead
+bootstrap-affix
+MODULES_LIST
+.split("\n")
+
+modules_list.reject! { |module_name| module_name =~ /^\#.*/ }
+
+modules_list.each do |module_name|
+  require_asset "twitter/bootstrap/#{module_name}"
+end
+%>

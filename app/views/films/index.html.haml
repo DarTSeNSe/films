@@ -1,0 +1,24 @@
+.films_table
+  - unless @films.blank?
+    %table.table.table-striped.table-hover
+      %thead
+        %tr
+          %th Name
+          %th Original Name
+          %th Year
+          %th Genre
+          %th Released
+          %th Director
+          %th Cast
+      %tbody
+        - @films.each do |film|
+          %tr.highlight_status{ data: { incident_statuses: alarm.incidents_data.attributes.keys.select(&:present?), event_statuses: alarm.events_data.attributes.keys } }
+            %td= film.name
+            %td= film.original_name
+            %td= film.year
+            %td= film.genre
+            %td= film.released
+            %td= film.director
+            %td= film.cast
+
+-#.pagination-centered= will_paginate @films, :renderer => BootstrapPagination::Rails
