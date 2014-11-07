@@ -1,0 +1,15 @@
+.modal#add_film_dialog.hide
+  .modal-header
+    = link_to 'x', '#', class: 'close', data: { dismiss: 'modal' }
+    %h4 Add New Film
+
+  .modal-body
+    = form_tag '/films', method: :post, html: {class: 'form-horizontal'} do
+      .row.form-horizontal
+        .span6
+          .control-group
+            = label_tag 'link', 'Link', class: 'control-label'
+            .controls
+              = text_field_tag 'link', nil
+
+      .margin-bottom.pull-right= submit_tag 'Add', class: 'btn btn-primary'

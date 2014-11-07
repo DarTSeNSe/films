@@ -1,3 +1,5 @@
+= link_to 'Add Film', '#add_film_dialog', { role: 'button', class: 'btn add_film_button', data: { toggle: 'modal' } }
+
 .films_table
   - unless @films.blank?
     %table.table.table-striped.table-hover
@@ -12,7 +14,7 @@
           %th Cast
       %tbody
         - @films.each do |film|
-          %tr.highlight_status{ data: { incident_statuses: alarm.incidents_data.attributes.keys.select(&:present?), event_statuses: alarm.events_data.attributes.keys } }
+          %tr
             %td= film.name
             %td= film.original_name
             %td= film.year
@@ -22,3 +24,5 @@
             %td= film.cast
 
 -#.pagination-centered= will_paginate @films, :renderer => BootstrapPagination::Rails
+
+= render partial: 'dialogs/add_film_dialog'

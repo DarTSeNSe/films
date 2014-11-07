@@ -91,3 +91,29 @@ span.tz-designation {
   overflow-y: auto;
   max-height: 600px;
 }
+
+
+
+
+
+
+
+
+
+
+
+#add_film_dialog {
+  top: 30%;
+  left: 45%;
+  width: 640px;
+
+  .form-horizontal .input-append {
+    display: block;
+    margin-bottom: 0px;
+    vertical-align: middle;
+  }
+
+  .form-horizontal input {
+    width: 335px;
+  }
+}
